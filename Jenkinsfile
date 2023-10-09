@@ -1,5 +1,5 @@
 pipeline {
-    agent { label "iti-sys-admin-sohaga" }
+    agent { label "slave1" }
 
     stages {
         stage('build') {

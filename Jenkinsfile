@@ -18,7 +18,7 @@ pipeline {
             
             steps {
                 echo 'deploy'
-                withCredentials([file(credentialsId: 'iti-sys-admin-sohag-kubeconfig-cred', variable: 'KUBECONFIG_SOHAG')]) {
+                withCredentials([file(credentialsId: 'kubesecret', variable: 'KUBECONFIG_SOHAG')]) {
                     sh '''
                         mv Deployment/deploy.yaml Deployment/tmp.yaml
                         cat Deployment/tmp.yaml | envsubst > Deployment/deploy.yaml
